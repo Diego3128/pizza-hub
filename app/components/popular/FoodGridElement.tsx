@@ -12,6 +12,7 @@ interface Props {
 export const FoodGridElement = ({ food }: Props) => {
   const [isActive, setIsActive] = useState(false);
   //   card-active class triggers the card flip
+  console.log("Todo: add whoosh sound when flipping the card")
   return (
     // grid item styles
     <div className="w-5/12 h-52 md:w-3/12 md:h-60  lg:w-full lg:h-full aspect-square rounded-xl">

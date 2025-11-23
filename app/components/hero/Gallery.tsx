@@ -62,21 +62,9 @@ export const Gallery = () => {
     createInterval();
     return () => cleanInterval();
   }, []);
-  //
-  useEffect(() => {
-    // scroll to active image
-    const activeImage = imgRefs.current[activeIndex];
-    if (activeImage) {
-      activeImage.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-      });
-    }
-  }, [activeIndex]);
 
   return (
-    <div className="relative h-full w-full bg-gray-950  xs:px-5 md:px-10 py-3 transition-all duration-500">
+    <div className="relative h-full w-full bg-gray-950  xs:px-5 md:px-10 py-3 transition-all duration-500 overflow-hidden">
       {/* options */}
       {showOptions && (
         <div className="absolute left-0 top-0 h-full w-full  flex justify-center items-center pointer-events-none">
@@ -98,24 +86,22 @@ export const Gallery = () => {
       )}
 
       {/* scrollable content */}
-      <div className="w-full h-full flex flex-col gap-8 overflow-hidden rounded-2xl shadow-xl shadow-amber-300/20">
-        {sampleImages.map((img, i) => (
-          <GalleryImg
-            showDetailsTimeout={showDetailsAfter}
-            isActive={i === activeIndex}
-            ref={(el) => {
-              imgRefs.current[i] = el as HTMLDivElement;
-            }}
-            alt={`${img.title} image`}
-            key={img.name}
-            src={`/images/hero/gallery/${img.name}`}
-            height={1000}
-            width={1000}
-            description={img.description}
-            title={img.title}
-          />
-        ))}
-      </div>
+      {sampleImages.map((img, i) => (
+        <GalleryImg
+          showDetailsTimeout={showDetailsAfter}
+          isActive={i === activeIndex}
+          ref={(el) => {
+            imgRefs.current[i] = el as HTMLDivElement;
+          }}
+          alt={`${img.title} image`}
+          key={img.name}
+          src={`/images/hero/gallery/${img.name}`}
+          height={1000}
+          width={1000}
+          description={img.description}
+          title={img.title}
+        />
+      ))}
     </div>
   );
 };
