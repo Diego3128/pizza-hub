@@ -23,12 +23,12 @@ export const Hero = () => {
       <div className="hero-grid">
         <Typewriter words={sampleWords} />
 
-        <div className="video min-h-64 md:min-h-96 :max-h-96">
+        <div className="video h-80">
           <VideoCarrousel videos={videos} />
         </div>
 
-        <div className="pics max-h-96">
-          {/* <Gallery /> */}
+        <div className="pics h-96">
+          <Gallery />
         </div>
       </div>
     </div>

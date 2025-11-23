@@ -60,7 +60,7 @@ export const GalleryImg = forwardRef<HTMLDivElement, Props>(
         // onMouseEnter={() => setisActive(true)}
         // onMouseLeave={() => setisActive(false)}
         ref={ref}
-        className="relative h-full w-full flex-none rounded-xl overflow-hidden"
+        className={`absolute top-0 left-0 h-full w-full flex-none rounded-xl overflow-hidden transition-transform duration-300 ${isActive ? "translate-x-0" : "translate-x-full"}`}
       >
         <Image
           draggable={false}
@@ -72,10 +72,6 @@ export const GalleryImg = forwardRef<HTMLDivElement, Props>(
         />
         {/* backdrop-blur-xs bg-white/5 */}
         <div
-          // className={`absolute  h-full w-full bottom-0 left-0  transition-all duration-500 ${
-          //   showDetails ? "translate-y-0" : "translate-y-full"
-          // }`}
-
           className={`absolute  h-full w-full bottom-0 left-0  transition-all duration-500 `}
         >
           {/* content */}
