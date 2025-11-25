@@ -8,7 +8,7 @@ interface Props {
 
 export const Typewriter = ({ words }: Props) => {
   return (
-    <div className="slogan min-h-[50px] min-[580px]:min-h-9">
+    <div className="slogan min-h-14 min-[580px]:min-h-10">
       <TypewriterEffect
         options={{
           strings: words,

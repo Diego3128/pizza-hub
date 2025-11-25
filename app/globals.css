@@ -64,13 +64,12 @@ body {
   }
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 800px) {
   .hero-grid {
     gap: 2rem;
 
     .video,
     .pics {
-      height: 75vh;
       height: 75vh;
     }
 

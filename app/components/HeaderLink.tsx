@@ -40,7 +40,7 @@ const links: Link[] = [
 export const Header = () => {
   return (
     <div
-      className={`${headingFont.className} flex gap-3 justify-between items-center flex-wrap-reverse max-w-6xl mx-auto text-gray-200 font-bold`}
+      className={`${headingFont.className} flex gap-3 justify-between items-center flex-wrap-reverse max-w-7xl mx-auto text-gray-200 font-bold`}
     >
       <LinkMenu links={links} />
 
