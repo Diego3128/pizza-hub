@@ -9,5 +9,5 @@ interface TitleProps {
 
 export const Title = ({ level = 1, children }: TitleProps) => {
   const Tag = `h${level}` as const;
-  return <Tag className={` text-gray-200 text-3xl md:text-4xl mb-10 text-center text-pretty ${headingFont.className}`}>{children}</Tag>;
+  return <Tag className={` text-gray-200 text-3xl md:text-4xl mb-16 text-center text-pretty ${headingFont.className}`}>{children}</Tag>;
 };

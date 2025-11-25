@@ -7,6 +7,11 @@
 
 @theme {
   --breakpoint-xs: 25rem;
+  --animate-shadow: custom-shadow 8s ease-in-out infinite;
+}
+
+::selection{
+  background: #c4ab1d;
 }
 
 body {
@@ -288,5 +293,19 @@ body {
 
   100% {
     transform: translateY(0px);
+  }
+}
+
+/* reviews */
+
+/* animartions */
+
+@keyframes custom-shadow {
+  0%,
+  100% {
+    box-shadow: 0px 0px 10px  #c9970349;
+  }
+  50% {
+    box-shadow: 0px 0px 10px  #2924154f;
   }
 }

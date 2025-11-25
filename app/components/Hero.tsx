@@ -19,7 +19,7 @@ const videos = ["hero-1.mp4", "hero-2.mp4", "hero-3.mp4", "hero-4.mp4"];
 
 export const Hero = () => {
   return (
-    <div className="min-h-[90vh] bg-slate-950">
+    <div className="min-h-[90vh] bg-slate-950 mb-20">
       <div className="hero-grid">
         <Typewriter words={sampleWords} />
 
