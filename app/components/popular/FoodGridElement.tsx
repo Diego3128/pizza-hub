@@ -35,7 +35,7 @@ export const FoodGridElement = ({ food }: Props) => {
   }, []);
   return (
     // grid item styles
-    <div className="w-5/12 h-52 md:w-3/12 md:h-60  lg:w-full lg:h-full aspect-square rounded-xl">
+    <div className="w-[46%] h-60 md:w-3/12 md:h-64  lg:w-full lg:h-full rounded-xl">
       {/* card element below */}
       <div
         onClick={handleClick}

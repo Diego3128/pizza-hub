@@ -9,7 +9,7 @@ export default function HomePage() {
 
       <Hero />
 
-      <main className="px-2 md:mx-auto max-w-7xl">
+      <main className="md:mx-auto max-w-7xl space-y-32">
         <Popular />
         <Location />
         <Reviews />
