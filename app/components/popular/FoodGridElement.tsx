@@ -1,7 +1,7 @@
 "use client";
 
 import { PopularFood } from "@/app/config/data/popularFoods";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { headingFont } from "@/app/config/fonts/fonts";
 
@@ -10,15 +10,35 @@ interface Props {
 }
 
 export const FoodGridElement = ({ food }: Props) => {
+  const toggleSound = useRef<null | HTMLAudioElement>(null);
+
   const [isActive, setIsActive] = useState(false);
   //   card-active class triggers the card flip
-  console.log("Todo: add whoosh sound when flipping the card")
+
+  const playSound = () => {
+    if (toggleSound.current) {
+      toggleSound.current.volume = 0.5;
+      toggleSound.current.play();
+    }
+  };
+
+  const handleClick = () => {
+    setIsActive((prev) => !prev);
+    playSound();
+  };
+
+  useEffect(() => {
+    const sound = new Audio("/sounds/whoosh.mp3");
+    if (sound) {
+      toggleSound.current = sound;
+    }
+  }, []);
   return (
     // grid item styles
     <div className="w-5/12 h-52 md:w-3/12 md:h-60  lg:w-full lg:h-full aspect-square rounded-xl">
       {/* card element below */}
       <div
-        onClick={() => setIsActive((prev) => !prev)}
+        onClick={handleClick}
         className={`card group hover:cursor-pointer ${
           isActive ? "card-active" : ""
         }`}
@@ -57,8 +77,14 @@ export const FoodGridElement = ({ food }: Props) => {
               />
               <div className=" absolute flex justify-center items-center inset-0 z-40  w-full overflow-hidden ">
                 <div className="w-11/12 p-2 backdrop-blur-xs bg-yellow-500/5 rounded-2xl text-center">
-                  <h3 className={` text-pretty mb-2  text-[16px] @[250px]:text-xl @md:text-xl  ${headingFont.className}`}>{food.title}</h3>
-                  <p className="text-balance text-xs @[250px]:text-[16px] @md:text-lg">{food.description}</p>
+                  <h3
+                    className={` text-pretty mb-2  text-[16px] @[250px]:text-xl @md:text-xl  ${headingFont.className}`}
+                  >
+                    {food.title}
+                  </h3>
+                  <p className="text-balance text-xs @[250px]:text-[16px] @md:text-lg">
+                    {food.description}
+                  </p>
                 </div>
               </div>
             </div>
