@@ -1,4 +1,5 @@
 import { Header, Hero, Location, Popular, Reviews } from "./components";
+import { Footer } from "./components/footer/Footer";
 
 export default function HomePage() {
   return (
@@ -15,7 +16,7 @@ export default function HomePage() {
         <Reviews />
       </main>
 
-      <footer>footer..</footer>
+      <Footer />
     </>
   );
 }
